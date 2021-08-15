@@ -8,6 +8,9 @@ Provide employees with a randomly generate a password that meets certain criteri
 * CSS
 * JavaScript
 
+##Contributing
+Calvin Donner
+
 ## 
 Website
 file:///C:/Users/calvi/Desktop/Challenge-3/Develop/index.html
