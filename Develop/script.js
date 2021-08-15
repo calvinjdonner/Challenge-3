@@ -1,10 +1,9 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-var specials = ['@','%','+','/',"'",'!','#','$','^','?',':',',',')','(','}','{',']','[','~','-','_','.'];
-var uppers = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
-var lowers = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
-var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-
+var specials = "'@','%','+','/','!','#','$','^','?',':',',',')','(','}','{',']','[','~','-','_','.'";
+var uppers = "'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'";
+var lowers = "'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'";
+var numbers = "'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'";
 var finalPassOptions = [];
 var password = [];
 
@@ -17,38 +16,38 @@ function writePassword() {
   var questionOptions = questions();
   console.log(questionOptions);
   console.log(questionOptions.length);
-  var passLength = questionOptions.length;
-  console.log(questionOptions.length);
 
-  if (questionOptions.lowers === true ) {
-    password.push(lowers[0]);
+  if (questionOptions.lower === true ) {
+    (questionOptions.length - 1); // this function isn't working. How do I deduct 1 of each character from the list to ensure it's captured
+    finalPassOptions.push('a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z');
+    password.push(finalPassOptions[Math.floor(Math.random() * finalPassOptions.length)]); // this function will select four random characters, but they aren't always part of the above group
+  }
+
+  if (questionOptions.upper === true ) {
     (questionOptions.length - 1);
-    finalPassOptions.concat(lowers);
+    finalPassOptions.push('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z');
+    password.push(finalPassOptions[Math.floor(Math.random() * finalPassOptions.length)]);
   }
 
+  if(questionOptions.special === true) {
+    (questionOptions.length - 1);
+    finalPassOptions.push('@','%','+','/','!','#','$','^','?',':',',',')','(','}','{',']','[','~','-','_','.');
+    password.push(finalPassOptions[Math.floor(Math.random() * finalPassOptions.length)]);
+  }
+
+  if(questionOptions.number === true) {
+    (questionOptions.length - 1);
+    finalPassOptions.push('0', '1', '2', '3', '4', '5', '6', '7', '8', '9');
+    password.push(finalPassOptions[Math.floor(Math.random() * finalPassOptions.length)]);
+  }
+
+  console.log(finalPassOptions);
   console.log(questionOptions.length);
+  console.log(password);
 
-  if (questionOptions.uppers === true ) {
-    password.push(uppers[0]);
-    passLength - 1;
-    finalPassOptions.concat(uppers);
+  for(let i = 0; i < questionOptions.length; i++){
+    //password.push(finalPassOptions(Math.floor(Math.random())));
   }
-
-  if(questionOptions.specials === true) {
-    password.push(specials[0]);
-    passLength - 1;
-    finalPassOptions.concat(specials);
-  }
-
-  if(questionOptions.numbers === true) {
-    password.push(numbers[0]);
-    passLength - 1;
-    finalPassOptions.concat(numbers);
-  }
-
-  //for(let i = 0; i < passLength; i++){
-    //password.push((Math.random() * passLength.length)(finalPassOptions))
-  //}
   
   password.join('')
 
@@ -76,9 +75,6 @@ function questions() {
   }
   return options;
 }
-
-  //special characters for criteria (lowercase, uppercase, numeric, special characters) need to be selectable
-
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
