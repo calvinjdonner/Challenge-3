@@ -1,7 +1,7 @@
 # Random Password Generator 
 
 ## Purpose
-Provide employees with a randomly generate a password that meets certain criteria. This will allow them to create a strong password that provides greater security.
+Provide employees with a randomly generated password that meets certain criteria (upper and lowercase letters, numbers, and symbols). This will allow them to create a strong password that provides greater security.
 
 ## Built With
 * HTML
