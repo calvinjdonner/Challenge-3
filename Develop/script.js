@@ -12,13 +12,11 @@ var passLength = [];
 function writePassword() {
   //var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
   passwordText.value = password.join('');
   var questionOptions = questions();
   console.log(questionOptions);
   console.log(questionOptions.length);
   var passLength = questionOptions.length;
-  //var passLength = questionOptions.length // *** can I set a var equal to the length of another variable
 
   if (questionOptions.lower === true ) {
     passLength -= 1; // *** this function isn't working. How do I deduct 1 of each character from the list to ensure it's captured
@@ -50,13 +48,17 @@ function writePassword() {
   console.log(passLength);
 
   for(var i = 0; i < passLength; i++){
-    //finalPassOptions.push(password);
     password.push(finalPassOptions[Math.floor(Math.random() * finalPassOptions.length)]);
   }
 
   console.log(password.join(''));
   
   password.join('');
+
+  document.getElementById("password").placeholder = password.join('');  
+
+  finalPassOptions = [];
+  password = [];
 }
 
 //need to offer options for password criteria. criteria needs to include length (>=8, <=128)
@@ -85,6 +87,5 @@ function questions() {
   }
   return options;
 }
-
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
