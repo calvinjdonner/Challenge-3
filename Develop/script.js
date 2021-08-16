@@ -42,17 +42,10 @@ function writePassword() {
     password.push(numbers[Math.floor(Math.random() * numbers.length)]);
   }
 
-  console.log(finalPassOptions);
-  console.log(questionOptions.length);
-  console.log(password.join(''));
-  console.log(passLength);
-
   for(var i = 0; i < passLength; i++){
     password.push(finalPassOptions[Math.floor(Math.random() * finalPassOptions.length)]);
   }
-
-  console.log(password.join(''));
-  
+    
   password.join('');
 
   document.getElementById("password").placeholder = password.join('');  
