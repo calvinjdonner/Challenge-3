@@ -8,9 +8,9 @@ Provide employees with a randomly generated password that meets certain criteria
 * CSS
 * JavaScript
 
-##Contributing
+## Contributing
 Calvin Donner
 
-## 
-Website
+## Website
 file:///C:/Users/calvi/Desktop/Challenge-3/Develop/index.html
+Screen shot of deployed page is available in the images folder within the repo
